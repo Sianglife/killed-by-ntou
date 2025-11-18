@@ -1,0 +1,44 @@
+{
+    "umbrella": [
+        {
+            "index": 1,
+            "name": "華碩員工傘",
+            "from": "華碩電腦員工福利贈品",
+            "join-date": "2025-10-17",
+            "died-date": null,
+            "died-reason": null,
+            "contribution": [
+                "2025/10/20 10級陣風中抵擋大雨有功",
+                "2025/11/10 6級陣風中輕傷退居二線"
+            ],
+            "hurt": true
+        },
+        {
+            "index": 2,
+            "name": "Toyota贈品傘",
+            "from": "不詳，於2025年8月領自東山中學失物招領",
+            "join-date": "2025-11-11",
+            "died-date": "2025-11-11",
+            "died-reason": "於八斗子6級陣風骨折陣亡",
+            "contribution": []
+        },
+        {
+            "index": 3,
+            "name": "點點直傘",
+            "from": "不詳，於2025年10月取自家中儲藏櫃",
+            "join-date": "2025-11-12",
+            "died-date": "2025-11-13",
+            "died-reason": "不敵6級陣風解體陣亡",
+            "contribution": []
+        },
+        {
+            "index": 4,
+            "name": "粉色自動傘",
+            "from": "不詳，於2025年8月領自東山中學失物招領",
+            "join-date": "2025-09-03",
+            "died-date": null,
+            "died-reason": null,
+            "contribution": []
+        }
+    ]
+}

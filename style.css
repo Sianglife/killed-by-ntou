@@ -15,17 +15,18 @@ body {
     padding: 0.5rem 1rem;
 }
 
-#board {
+#died-board {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    margin: 1rem 2rem;
+    margin: 1rem 1rem;
     justify-self: center;
+    justify-content: center;
 }
 
 .died-area {
     border: 2px solid #000;
-    width: 10rem;
+    width: 13rem;
     padding: 1rem;
     text-align: center;
 }
