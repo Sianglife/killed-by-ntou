@@ -1,4 +1,4 @@
-const diedTableGenerator = ((object) => {
+const TableGenerator = ((object) => {
     const index = object['index'];
     const name = object['name'];
     const from = object['from'];
@@ -36,20 +36,13 @@ const diedBoardGenerator = ((object) => {
     const contribution = object['contribution'];
     const hurt = object['hurt'];
 
-    let status_text_ele;
-    if (diedDate == null) {
-        status_text_ele = hurt 
-            ? '<p style="color: orange;">受傷</p>' 
-            : '<p style="color: black;">服役中</p>';
-    } else {
-        status_text_ele = '<p style="color: red;">陣亡</p>';
-    }
+    if (diedDate == null) return ``;
 
     return `    
     <div class="died-area" id="died-${index}">
         <img class="died-img" src="assets/umbrella/${index}.jpg" alt="傘${index}" onerror="this.src='assets/umbrella.png'; this.onerror=null;">
         <p>${name}</p>
-        <b>${status_text_ele}</b>
+        <b><p style="color: red;">陣亡</p></b>
         <p>籍貫：${from}</p>
         <p>加入日期：${joinDate}</p>
         ${
@@ -66,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             data.umbrella.forEach(object => {
-                if (diedTable) diedTable.innerHTML += diedTableGenerator(object);
+                if (diedTable) diedTable.innerHTML += TableGenerator(object);
                 if (diedBoard) diedBoard.innerHTML += diedBoardGenerator(object);
             });
     })

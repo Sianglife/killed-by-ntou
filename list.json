@@ -39,6 +39,18 @@
             "died-date": null,
             "died-reason": null,
             "contribution": []
+        },
+        {
+            "index": 5,
+            "name": "松本清藍色傘",
+            "from": "松本清忠孝敦化店",
+            "join-date": "2025-11-18",
+            "died-date": null,
+            "died-reason": null,
+            "contribution": [
+                "2025/11/17 6級陣風在使用中被吹走",
+                "2025/11/18 握把脫落後修復"
+            ]
         }
     ]
 }
