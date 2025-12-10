@@ -1,4 +1,4 @@
-const TableGenerator = ((object) => {
+const TableGeneratorOld = ((object) => {
     const index = object['index'];
     const name = object['name'];
     const from = object['from'];
@@ -24,6 +24,44 @@ const TableGenerator = ((object) => {
             <td>${status_text_ele}</td>
         </tr>
     `
+})
+
+const TableGenerator = ((object) => {
+    const index = object['index'];
+    const name = object['name'];
+    const from = object['from'];
+    const joinDate = object['join-date'];
+    const diedDate = object['died-date'];
+    const diedReason = object['died-reason'];
+    const contribution = object['contribution'];
+    const hurt = object['hurt'];
+    
+    let status_text_ele;
+    if (diedDate == null) {
+        if (hurt) {
+            status_text_ele = `<p style="color: orange;">受傷</p>`;
+        } else {
+            status_text_ele = `<p style="color: black;">服役中</p>`;
+        }
+    } else {
+        status_text_ele = `<p style="color: red;">陣亡</p>`;
+    }
+    
+    return `    
+    <div class="died-area" id="died-${index}">
+        <img class="died-img" src="assets/umbrella/${index}.jpg" alt="傘${index}" onerror="this.src='assets/umbrella.png'; this.onerror=null;">
+        <p>${name}</p>
+        <b>${status_text_ele}</b>
+        <p>籍貫：${from}</p>
+        <p style="color: grey;">${diedReason ?? ''}</p>        
+        <p style="color: grey;">${contribution.map((ctx) => {
+            return `• ${ctx} <br>`;
+        })}</p>
+        <p>加入日期：${joinDate}</p>
+        ${
+            diedDate != null ? `<p>逝世日期：${diedDate}</p>` : ``
+        }
+    </div>`
 })
 
 const diedBoardGenerator = ((object) => {    
@@ -53,7 +91,7 @@ const diedBoardGenerator = ((object) => {
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-    const diedTable = document.getElementById('died-table')?.getElementsByTagName('tbody')[0];
+    const diedTable = document.getElementById('died-table') ?? null;
     const diedBoard = document.getElementById('died-board') ?? null;
     fetch('list.json')
         .then(response => response.json())

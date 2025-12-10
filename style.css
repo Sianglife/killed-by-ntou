@@ -6,8 +6,12 @@ body {
 }
 
 #died-table {
-    justify-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
     padding: 2rem 2rem;
+    justify-self: center;
+    justify-content: center;
 }
 
 #died-table th, #died-table td {
@@ -26,7 +30,7 @@ body {
 
 .died-area {
     border: 2px solid #000;
-    width: 13rem;
+    width: 16rem;
     padding: 1rem;
     text-align: center;
 }
