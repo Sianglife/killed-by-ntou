@@ -1,31 +1,3 @@
-const TableGeneratorOld = ((object) => {
-    const index = object['index'];
-    const name = object['name'];
-    const from = object['from'];
-    const joinDate = object['join-date'];
-    const diedDate = object['died-date'];
-    const diedReason = object['died-reason'];
-    const contribution = object['contribution'];
-    const hurt = object['hurt'];
-
-    let status_text_ele;
-    if (diedDate == null) {
-        status_text_ele = hurt 
-            ? '<span style="color: orange;">受傷</span>' 
-            : '<span style="color: black;">服役中</span>';
-    } else {
-        status_text_ele = '<span style="color: red;">陣亡</span>';
-    }
-
-    return `    
-        <tr>
-            <td>${index}</td>
-            <td><a href="#died-${index}">${name}</a></td>
-            <td>${status_text_ele}</td>
-        </tr>
-    `
-})
-
 const TableGenerator = ((object) => {
     const index = object['index'];
     const name = object['name'];
@@ -39,28 +11,28 @@ const TableGenerator = ((object) => {
     let status_text_ele;
     if (diedDate == null) {
         if (hurt) {
-            status_text_ele = `<p style="color: orange;">受傷</p>`;
+            status_text_ele = `<p class="status-text" style="color: orange;">受傷</p>`;
         } else {
-            status_text_ele = `<p style="color: black;">服役中</p>`;
+            status_text_ele = `<p class="status-text" style="color: black;">服役中</p>`;
         }
     } else {
-        status_text_ele = `<p style="color: red;">陣亡</p>`;
+        status_text_ele = `<p class="status-text" style="color: red;">陣亡</p>`;
     }
     
     return `    
     <div class="died-area" id="died-${index}">
         <img class="died-img" src="assets/umbrella/${index}.jpg" alt="傘${index}" onerror="this.src='assets/umbrella.png'; this.onerror=null;">
-        <p>${name}</p>
-        <b>${status_text_ele}</b>
-        <p>籍貫：${from}</p>
-        <p style="color: grey;">${diedReason ?? ''}</p>        
-        <p style="color: grey;">${contribution.map((ctx) => {
-            return `• ${ctx} <br>`;
-        })}</p>
-        <p>加入日期：${joinDate}</p>
-        ${
-            diedDate != null ? `<p>逝世日期：${diedDate}</p>` : ``
-        }
+        <p class="name">${name}</p>
+        ${status_text_ele}
+        <p class="from">籍貫：${from}</p>
+        <p class="died-reason" style="color: grey;">${diedReason ?? ''}</p>
+        ${contribution.map((ctx => `<p class="contribution" style="color: grey;">${ctx}</p>`)).join('')}
+        <div class="date-info">
+            <p class="join-date">加入日期：${joinDate}</p>
+            ${
+                diedDate != null ? `<p class="died-date">逝世日期：${diedDate}</p>` : ``
+            }
+        </div>
     </div>`
 })
 
@@ -79,13 +51,15 @@ const diedBoardGenerator = ((object) => {
     return `    
     <div class="died-area" id="died-${index}">
         <img class="died-img" src="assets/umbrella/${index}.jpg" alt="傘${index}" onerror="this.src='assets/umbrella.png'; this.onerror=null;">
-        <p>${name}</p>
-        <b><p style="color: red;">陣亡</p></b>
-        <p>籍貫：${from}</p>
-        <p>加入日期：${joinDate}</p>
+        <p class="name">${name}</p>
+        <p class="status-text" style="color: red;">陣亡</p>
+        <p class="from">籍貫：${from}</p>
+        <div class="date-info">
+        <p class="join-date">加入日期：${joinDate}</p>
         ${
-            diedDate != null ? `<p>逝世日期：${diedDate}</p>` : ``
+            diedDate != null ? `<p class="died-date">逝世日期：${diedDate}</p>` : ``
         }
+        </div>
     </div>
     `
 })

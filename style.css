@@ -29,6 +29,8 @@ body {
 }
 
 .died-area {
+    display: flex;
+    flex-direction: column;
     border: 2px solid #000;
     width: 16rem;
     padding: 1rem;
@@ -36,7 +38,8 @@ body {
 }
 
 .died-img {
-    max-width: 100%;
+    align-self: center;
+    max-width: fit-content;
     max-height: 10rem;
 }
 
@@ -75,4 +78,40 @@ a {
   font-family: "LXGW WenKai TC", cursive;
   font-weight: 400;
   font-style: normal;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.date-info {
+    align-content: end;
+    margin-top: 0.5rem; 
+    flex-grow: 1;
+    font-weight: 500;
+    color: rgb(85, 85, 85);
+}
+
+.status-text {
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.contribution {
+    margin: 0.5rem 0;
+}
+
+.died-reason {
+    margin: 1rem 0;
+    font-weight: 600;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+
+.from {
+    font-size: 0.95rem;
 }
