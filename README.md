@@ -1,20 +1,24 @@
 # Killed By NTOU
 
-A small static site for remembering the umbrellas that have survived, suffered, or fallen in the weather around NTOU.
+[English version](README.en.md)
 
-## What is this?
+飛翔受全體雨傘軍團之付託，依據宇宙射線之神造成之乖乖傳說，為紀念雨傘先烈，祭祀雨神，奠定雨中安全，增進校園安寧，設立此紀念版，頒行全球，永矢咸遵。
 
-This project is a lightweight, client-side website built with plain HTML, CSS, and JavaScript. It renders umbrella records from `list.json` and displays them on the home page and the list page.
+![Killed By NTOU](assets/snapshot.png)
 
-## Pages
+## 這是什麼？
 
-- `index.html` - landing page with the umbrella memorial board
-- `list.html` - full umbrella roster
-- `ocean.html` - themed page with an embedded video
+這個專案是以純 HTML、CSS 與 JavaScript 製作的前端網站。內容會從 `list.json` 讀取，並顯示在首頁與名單頁面。
 
-## Data
+## 頁面
 
-Umbrella entries live in `list.json` under the `umbrella` array. Each item currently includes:
+- `index.html` - 進入網站的切入點，顯示雨傘墓園主頁
+- `list.html` - 雨傘完整名單
+- `ocean.html` - 內嵌影片的主題頁面
+
+## 資料
+
+雨傘資料放在 `list.json` 的 `umbrella` 陣列中，每一筆資料目前包含：
 
 - `index`
 - `name`
@@ -25,16 +29,16 @@ Umbrella entries live in `list.json` under the `umbrella` array. Each item curre
 - `contribution`
 - `hurt`
 
-The JavaScript in `script.js` reads this file and generates the displayed cards.
+`script.js` 會讀取這些資料並產生頁面上的卡片內容。
 
-## Assets
+## 資源
 
-- `assets/umbrella/` - individual umbrella photos, named by index
+- `assets/umbrella/` - 以編號命名的單把雨傘照片
 
-## Run locally
+## 本機開啟
 
-The `index.html` is the static entry point for the site.
+`index.html` 為網站靜態切入點。
 
-## License
+## 授權
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+本專案採用 MIT License。詳見 [LICENSE](LICENSE)。
