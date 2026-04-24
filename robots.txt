@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sianglife.github.io/killed-by-ntou/sitemap.xml
