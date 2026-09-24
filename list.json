@@ -68,6 +68,38 @@
         "2025/12/05 5級陣風彎折"
       ],
       "hurt": true
+    },
+    {
+      "index": 7,
+      "name": "寶雅藍色自動傘",
+      "from": "寶雅蘆竹南竹",
+      "join-date": "2026-04-25",
+      "died-date": "2026-06-10",
+      "died-reason": null,
+      "contribution": [],
+      "hurt": true
+    },
+    {
+      "index": 8,
+      "name": "寶雅柴犬折傘",
+      "from": "寶雅大江購物中心",
+      "join-date": "2026-04-25",
+      "died-date": "2026-09-03",
+      "died-reason": "水中調查局任務期間 於潮境公園傘架分離陣亡",
+      "contribution": [
+        "堅毅之傘，伴主人通勤之路有功"
+      ],
+      "hurt": true
+    },
+    {
+      "index": 9,
+      "name": "深藍可終身維修折傘",
+      "from": "富雨洋傘市府轉運站",
+      "join-date": "2026-09-05",
+      "died-date": null,
+      "died-reason": null,
+      "contribution": [],
+      "hurt": false
     }
   ]
 }
