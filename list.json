@@ -76,7 +76,9 @@
       "join-date": "2026-04-25",
       "died-date": "2026-06-10",
       "died-reason": null,
-      "contribution": [],
+      "contribution": [
+        "2026/06/10 老天不爽要說啊!!!"
+      ],
       "hurt": true
     },
     {
@@ -98,8 +100,10 @@
       "join-date": "2026-09-05",
       "died-date": null,
       "died-reason": null,
-      "contribution": [],
-      "hurt": false
+      "contribution": [
+        "2026/10/05 今年第一個海大天氣：原來防風功能是直接彎掉"
+      ],
+      "hurt": true
     }
   ]
 }
